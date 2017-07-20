@@ -1,0 +1,1 @@
+web: java -jar target/Leave_Note_Project-*.jar

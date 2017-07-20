@@ -1,0 +1,53 @@
+
+<div>
+	<div ng-if="ctrl.successMessage">{{ctrl.successMessage}}</div>
+	<div ng-if="ctrl.errorMessage">{{ctrl.errorMessage}}</div>
+	<form ng-submit="ctrl.submit()" name="myForm">
+		<input type="hidden" ng-model="ctrl.note.noteId" />
+		<div>
+			<div>
+				<label for="title">Title</label> <input type="text"
+					ng-model="ctrl.note.title" id="title" placeholder="Title" />
+
+			</div>
+		</div>
+
+		<div>
+			<div>
+				<label for="body">Note</label> <textarea ng-model="ctrl.note.body" id="body" placeholder="Note" ng-maxlength="50"></textarea>
+					 
+
+			</div>
+		</div>
+
+		<div>
+			<div>
+				<input type="submit"
+					value="{{!ctrl.note.noteId ? 'Add' : 'Update'}}"
+					ng-disabled="myForm.$invalid || myForm.$pristine"></input>
+				<button type="button" ng-click="ctrl.reset()"
+					ng-disabled="myForm.$pristine">Reset</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div>
+	<table ng-hide="(ctrl.getAllNotes() | filter: criteria).length == 0">
+		<tr>
+			<td>Title</td>
+			<td>Entry Date</td>
+			<td>Edit</td>
+			<td>Remove</td>
+		</tr>
+		<tr ng-repeat="note in ctrl.getAllNotes() | orderBy: 'entryDate' :true ">
+			<td>{{ note.title }}</td>
+			<td>{{note.entryDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+			<td><button type="button" ng-click="ctrl.editNote(note.noteId)">Edit</button></td>
+			<td><button type="button"
+					ng-click="ctrl.removeNote(note.noteId)">Remove</button></td>
+
+		</tr>
+	</table>
+</div>
+

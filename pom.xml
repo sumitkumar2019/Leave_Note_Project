@@ -9,7 +9,7 @@
 	<groupId>com.project.leavenotes</groupId>
 	<artifactId>Leave_Note_Project</artifactId>
 	<version>1.0.0</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>Leave Notes Project</name>
 	<description>Leave Notes Project</description>
 	<dependencies>

@@ -1,8 +1,8 @@
 var app = angular.module('noteApp',['ui.router','ngStorage']);
  
 app.constant('urls', {
-	 BASE: 'http://localhost:8080/LeaveNoteApp',
-	 NOTE_SERVICE_API : 'http://localhost:8080/LeaveNoteApp/api/notes/'
+	 BASE: 'http://leavenoteapp.herokuapp.com/LeaveNoteApp',
+	 NOTE_SERVICE_API : 'http://leavenoteapp.herokuapp.com/LeaveNoteApp/api/notes/'
 });
  
 app.config(['$stateProvider', '$urlRouterProvider',

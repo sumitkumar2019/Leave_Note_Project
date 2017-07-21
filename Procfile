@@ -1,1 +1,1 @@
-web: java -jar target/Leave_Note_Project-*.jar
+web: java -Dserver.port=9999 -jar target/*.jar

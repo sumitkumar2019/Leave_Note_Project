@@ -1,5 +1,6 @@
 'use strict';
- 
+
+// services defined using factory &scope not allowed hence used $localstorage
 angular.module('noteApp').factory('NoteService',
     ['$localStorage', '$http', '$q', 'urls',
         function ($localStorage, $http, $q, urls) {
@@ -14,6 +15,9 @@ angular.module('noteApp').factory('NoteService',
             };
             return factory;
  
+            /**
+			 * method to List all notes
+			 */
             function loadAllNotes() {
                 console.log('Fetching all notes');
                 var deferred = $q.defer();
@@ -32,6 +36,9 @@ angular.module('noteApp').factory('NoteService',
                 return deferred.promise;
             }
  
+            /**
+			 * method to add note
+			 */
             function addNote(note) {
                 console.log('Adding Note');
                 var deferred = $q.defer();
@@ -49,6 +56,9 @@ angular.module('noteApp').factory('NoteService',
                 return deferred.promise;
             }
             
+            /**
+			 * method to update note after getting using its id
+			 */
             function updateNote(note, noteId) {
                 console.log('Updating Note with id '+noteId);
                 var deferred = $q.defer();
@@ -66,6 +76,9 @@ angular.module('noteApp').factory('NoteService',
                 return deferred.promise;
             }
  
+            /**
+			 * method to delete a note
+			 */
             function removeNote(noteId) {
                 console.log('Removing Note with id '+noteId);
                 var deferred = $q.defer();
@@ -83,11 +96,16 @@ angular.module('noteApp').factory('NoteService',
                 return deferred.promise;
             }
  
-            
+            /**
+			 * method to get a list of note
+			 */
             function getAllNotes(){
                 return $localStorage.notes;
             }
             
+            /**
+			 * method to get a single note
+			 */
             function getNote(noteId) {
                 console.log('Fetching Note with id :'+noteId);
                 var deferred = $q.defer();

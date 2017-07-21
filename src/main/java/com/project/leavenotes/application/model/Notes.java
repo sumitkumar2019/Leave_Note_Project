@@ -8,6 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+/**
+ * @author sumit
+ * 
+ *         Model Entity Bean 'Notes' for working with JPA
+ */
+
 @Entity
 @Table(name = "Notes")
 public class Notes {

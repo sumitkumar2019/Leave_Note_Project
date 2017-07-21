@@ -2,6 +2,13 @@ package com.project.leavenotes.application.to;
 
 import java.util.Date;
 
+/**
+ * @author sumit
+ *
+ *         Transfer Object for Mapping data from Entity and sending it back as
+ *         form object
+ */
+
 public class Note {
 
 	private Long noteId;

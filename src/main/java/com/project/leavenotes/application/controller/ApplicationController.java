@@ -16,6 +16,13 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.project.leavenotes.application.service.NotesService;
 import com.project.leavenotes.application.to.Note;
 
+/**
+ * @author sumit
+ * 
+ *         Configured Rest API based Controller for Add, Edit, List and Delete
+ *         note operation
+ */
+
 @RestController
 @RequestMapping("/api")
 public class ApplicationController {
@@ -24,6 +31,8 @@ public class ApplicationController {
 	@Autowired
 	private NotesService noteService;
 
+	// -------------------List all Note-------------------------------------------
+	
 	@RequestMapping(value = "/notes/", method = RequestMethod.GET)
 	public ResponseEntity<List<Note>> listAllNotes() {
 		List<Note> notes = noteService.listNotes();

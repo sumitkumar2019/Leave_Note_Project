@@ -6,15 +6,11 @@ It should be possible to :
 #2. A note has a title and body. 
 #3. Default view is a list of notes, descending by entry date. 
 #4. Each note�s header should have its title and a date of entry.
-#5. The design is not very important, but 
+
 
 Suggested stack: Spring Boot, AngularJS, 
 some in-memory database (or whatever makes the most sense to you) where the notes are saved, 
 and any other frameworks you deem necessary.
-
-#6. Please make the code available in any public Git repository of your choice (e.g. Github). 
-#7. If you have a possibility to have a running server with a demo of your app, that�s a bonus, but not a neccesity.
-#8. document how to deploy your application
 
 ## Test Data ##
 INSERT INTO NOTES (NOTE_ID, TITLE, BODY, ENTRY_DATE)
